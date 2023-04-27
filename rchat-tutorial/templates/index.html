@@ -3,5 +3,24 @@
 {% block title %}Registration {% endblock %}
 
 {% block content %}
-<h1>Get started</h1>
+    <h1>Get started</h1>
+    <form>
+        <div>
+            {{ form.username(class_='form-control',
+                placeholder='Username', autocomplete='off',
+                autofocus=true) }}
+        </div>
+        <div>
+            {{ form.password(class_='form-control',
+                placeholder='Password') }}
+        </div>
+        <div>
+            {{ form.confirm_pwd(class_='form-control',
+                placeholder='Retype Password') }}
+        </div>
+        <div>
+            <input type="submit" value="Create">
+        </div>
+            {{ form.csrf_token }}
+    </form>
 {% endblock %}
